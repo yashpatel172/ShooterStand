@@ -11,6 +11,7 @@ public class WeaponsGUI : MonoBehaviour
     public Text weaponAmount;
 
     public Image weaponLogo;
+    public GameObject buyButton;
 
     public Text damageUI;
     public Text accuracyUI;

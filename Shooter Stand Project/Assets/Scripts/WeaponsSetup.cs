@@ -9,8 +9,7 @@ public class WeaponsSetup : MonoBehaviour
     public List<WeaponsList> weapons = new List<WeaponsList>();
     public Transform gridLocation;
     public GameObject weaponHolderPrefab;
-    public List<GameObject> tempUIElements = new List<GameObject>();
-
+    public List<GameObject> tempGUI = new List<GameObject>();
     void Start()
     {
         weaponsSetup = this;
@@ -21,8 +20,8 @@ public class WeaponsSetup : MonoBehaviour
     {
         for (int i = 0; i < weapons.Count; i++)
         {
-            GameObject holder = Instantiate(weaponHolderPrefab, gridLocation, false);
-            WeaponsGUI weaponsGuiInfo = holder.GetComponent<WeaponsGUI>();
+            tempGUI[i] = Instantiate(weaponHolderPrefab, gridLocation, false);
+            WeaponsGUI weaponsGuiInfo = tempGUI[i].GetComponent<WeaponsGUI>();
 
             weaponsGuiInfo.weaponID = weapons[i].weaponID;
             weaponsGuiInfo.weaponName.text = weapons[i].weaponName;
@@ -33,6 +32,8 @@ public class WeaponsSetup : MonoBehaviour
             weaponsGuiInfo.accuracyUI.text = weapons[i].accuracy.ToString() + "%";
             weaponsGuiInfo.reloadUI.text = weapons[i].reload.ToString() + "s";
             weaponsGuiInfo.clipUI.text = weapons[i].clip.ToString();
+
+            weaponsGuiInfo.buyButton.GetComponent<WeaponBuyButton>().weaponID = weapons[i].weaponID;
         }
     }
 }

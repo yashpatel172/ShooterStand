@@ -18,5 +18,5 @@ public class WeaponsList
     public int reload;
     public int clip;
 
-    public bool isBought;
+    //public bool isBought;
 }
