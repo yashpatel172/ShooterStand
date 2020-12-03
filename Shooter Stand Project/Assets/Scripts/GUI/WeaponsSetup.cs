@@ -34,6 +34,7 @@ public class WeaponsSetup : MonoBehaviour
             weaponsGuiInfo.clipUI.text = weapons[i].clip.ToString();
 
             weaponsGuiInfo.buyButton.GetComponent<WeaponBuyButton>().weaponID = weapons[i].weaponID;
+            weaponsGuiInfo.equipButton.GetComponent<WeaponBuyButton>().weaponID = weapons[i].weaponID;
         }
     }
 }

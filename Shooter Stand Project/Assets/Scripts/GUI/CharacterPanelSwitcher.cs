@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterPanelSwitcher : MonoBehaviour
 {
+    public static CharacterPanelSwitcher panelSwitcher;
     public GameObject[] characterPanels = new GameObject[4];
     public GameObject nextButton;
     public GameObject previousButton;
@@ -11,6 +12,7 @@ public class CharacterPanelSwitcher : MonoBehaviour
 
     void Start()
     {
+        panelSwitcher = this;
         nextButton.SetActive(true);
         previousButton.SetActive(false);
         CharacterSwitcher();

@@ -16,7 +16,5 @@ public class CharactersList
     public bool isOnMission;
     public bool isHealing;
 
-    public GameObject weaponSlot;
-    public GameObject equipmentSlot1;
-    public GameObject equipmentSlot2;
+    public int equippedWeaponID;
 }
