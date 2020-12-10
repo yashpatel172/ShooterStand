@@ -95,6 +95,11 @@ public class WeaponBuyButton : MonoBehaviour
                         WeaponsGUI miniTemp = WeaponsSetup.weaponsSetup.tempGUI[wTemp].GetComponent<WeaponsGUI>();
                         miniTemp.weaponAmount.text = WeaponsSetup.weaponsSetup.weapons[wTemp].weaponAmount.ToString();
 
+                        if (WeaponsSetup.weaponsSetup.weapons[wTemp].weaponAmount > 0)
+                        {
+                            miniTemp.buyButton.SetActive(false);
+                            miniTemp.equipButton.SetActive(true);
+                        }
                     Characters.charactersInfo.characters[CharacterPanelSwitcher.panelSwitcher.currentCharacterSelected].equippedWeaponID = weaponID;
                     }
                     else
